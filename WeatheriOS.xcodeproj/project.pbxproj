@@ -39,6 +39,7 @@
 		F23885C5250F9BE30020C32A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23885BE250F9BE30020C32A /* MainView.swift */; };
 		F2603967250FE54F005068A1 /* BasicResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2603966250FE54F005068A1 /* BasicResponseError.swift */; };
 		F2603969250FE8F3005068A1 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2603968250FE8F3005068A1 /* CurrentWeather.swift */; };
+		F288BEC825100DB9003F5C3B /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288BEC725100DB9003F5C3B /* Forecast.swift */; };
 		F2E8CBC5250FE2DC00FC59A9 /* BasicResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E8CBC4250FE2DC00FC59A9 /* BasicResponseHandler.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		F23885BE250F9BE30020C32A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F2603966250FE54F005068A1 /* BasicResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicResponseError.swift; sourceTree = "<group>"; };
 		F2603968250FE8F3005068A1 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		F288BEC725100DB9003F5C3B /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F2E8CBC4250FE2DC00FC59A9 /* BasicResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicResponseHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -243,6 +245,7 @@
 			children = (
 				F2603966250FE54F005068A1 /* BasicResponseError.swift */,
 				F2603968250FE8F3005068A1 /* CurrentWeather.swift */,
+				F288BEC725100DB9003F5C3B /* Forecast.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				F207534B250F9E8B00EC3E6B /* ForecastInteractor.swift in Sources */,
 				F2388568250F9A210020C32A /* AppDelegate.swift in Sources */,
 				F238856A250F9A210020C32A /* SceneDelegate.swift in Sources */,
+				F288BEC825100DB9003F5C3B /* Forecast.swift in Sources */,
 				F2603967250FE54F005068A1 /* BasicResponseError.swift in Sources */,
 				F2603969250FE8F3005068A1 /* CurrentWeather.swift in Sources */,
 				F23885C1250F9BE30020C32A /* MainPresenter.swift in Sources */,

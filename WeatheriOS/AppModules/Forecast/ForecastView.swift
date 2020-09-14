@@ -24,6 +24,10 @@ final class ForecastView: HomeViewController {
 
 //MARK: - ForecastView API
 extension ForecastView: ForecastViewApi {
+    func updateView(forecast: Forecast) {
+        self.stopLoading()
+//        print(forecast)
+    }
 }
 
 // MARK: - ForecastView Viper Components API

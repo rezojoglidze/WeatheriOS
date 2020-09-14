@@ -21,6 +21,7 @@ struct Constants {
             static let number = "/2.5"
             static let data = "/data"
             static let weather = "/weather"
+            static let forecast = "/forecast"
         }
     }
 }

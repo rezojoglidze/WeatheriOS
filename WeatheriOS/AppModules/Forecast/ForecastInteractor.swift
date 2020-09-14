@@ -15,6 +15,16 @@ final class ForecastInteractor: Interactor {
 
 // MARK: - ForecastInteractor API
 extension ForecastInteractor: ForecastInteractorApi {
+    func getWeatherForecast() {
+        BaseAPI.shared.getWeatherForecast(city: "Tbilisi"){[weak self] response in
+            switch response {
+            case .success(let forecast):
+                self?.presenter.forecastDidLoad(forecast: forecast)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 // MARK: - Interactor Viper Components Api

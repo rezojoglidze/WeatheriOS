@@ -39,8 +39,16 @@ class BaseAPI {
     func getCurrentWeather(city: String, completionHandler: @escaping (Result<CurrentWeather,BasicResponseError>) -> Void) {
         
         let urlStr = Constants.Api.baseUrl + Constants.Api.Routes.data + Constants.Api.Routes.number + Constants.Api.Routes.weather + "?q=" + "\(city)" + "&appid=" + Constants.Key.apiKey + "&units=metric"
-         request(urlStr, method: .get, needsAuthorization: true).responseJSON { response in
+        request(urlStr, method: .get, needsAuthorization: true).responseJSON { response in
             let responseHandler = BasicResponseHandler<CurrentWeather>()
+            completionHandler(responseHandler.getResult(from: response))
+        }
+    }
+    
+    func getWeatherForecast(city: String, completionHandler: @escaping (Result<Forecast,BasicResponseError>) -> Void) {
+        let urlStr = Constants.Api.baseUrl + Constants.Api.Routes.data + Constants.Api.Routes.number + Constants.Api.Routes.forecast + "?q=" + "\(city)" + "&appid=" + Constants.Key.apiKey + "&units=metric"
+        request(urlStr, method: .get, needsAuthorization: true).responseJSON { response in
+            let responseHandler = BasicResponseHandler<Forecast>()
             completionHandler(responseHandler.getResult(from: response))
         }
     }

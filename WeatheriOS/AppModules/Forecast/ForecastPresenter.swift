@@ -11,10 +11,18 @@ import Viperit
 
 // MARK: - ForecastPresenter Class
 final class ForecastPresenter: Presenter {
+    
+    override func viewHasLoaded() {
+        view.startLoading()
+        interactor.getWeatherForecast()
+    }
 }
 
 // MARK: - ForecastPresenter API
 extension ForecastPresenter: ForecastPresenterApi {
+    func forecastDidLoad(forecast: Forecast) {
+        view.updateView(forecast: forecast)
+    }
 }
 
 // MARK: - Forecast Viper Components
