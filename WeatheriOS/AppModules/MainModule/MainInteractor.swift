@@ -15,6 +15,16 @@ final class MainInteractor: Interactor {
 
 // MARK: - MainInteractor API
 extension MainInteractor: MainInteractorApi {
+    func getCurrentWeather() {
+        BaseAPI.shared.getCurrentWeather(city: "Tbilisi") { [weak self] (response) in
+            switch response {
+            case .success(let currentWeather):
+                self?.presenter.weatherDidLoaded(with: currentWeather)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 // MARK: - Interactor Viper Components Api

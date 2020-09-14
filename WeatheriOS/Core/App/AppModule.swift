@@ -11,12 +11,12 @@ import Viperit
 
 enum AppModules: String, ViperitModule {
     case
-        main
+        main,forecast
     
     var viewType: ViperitViewType {
         switch self {
         case
-            .main : return .storyboard
+        .main,.forecast : return .storyboard
         }
     }
 }

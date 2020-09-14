@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		E45A6E95BC9CDB3B89AE486B /* Pods_WeatheriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83ACF51652A3D83ED3A42C99 /* Pods_WeatheriOS.framework */; };
+		F207533D250F9E1B00EC3E6B /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F207533C250F9E1B00EC3E6B /* HomeTabBarController.swift */; };
+		F2075346250F9E8B00EC3E6B /* Forecast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F207533F250F9E8B00EC3E6B /* Forecast.storyboard */; };
+		F2075347250F9E8B00EC3E6B /* ForecastDisplayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2075340250F9E8B00EC3E6B /* ForecastDisplayData.swift */; };
+		F2075348250F9E8B00EC3E6B /* ForecastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2075341250F9E8B00EC3E6B /* ForecastPresenter.swift */; };
+		F2075349250F9E8B00EC3E6B /* ForecastRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2075342250F9E8B00EC3E6B /* ForecastRouter.swift */; };
+		F207534A250F9E8B00EC3E6B /* ForecastModuleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2075343250F9E8B00EC3E6B /* ForecastModuleApi.swift */; };
+		F207534B250F9E8B00EC3E6B /* ForecastInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2075344250F9E8B00EC3E6B /* ForecastInteractor.swift */; };
+		F207534C250F9E8B00EC3E6B /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2075345250F9E8B00EC3E6B /* ForecastView.swift */; };
+		F2075351250F9F7A00EC3E6B /* ProgressNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F207534F250F9F7A00EC3E6B /* ProgressNavigationController.swift */; };
 		F2388568250F9A210020C32A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2388567250F9A210020C32A /* AppDelegate.swift */; };
 		F238856A250F9A210020C32A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2388569250F9A210020C32A /* SceneDelegate.swift */; };
 		F2388574250F9A250020C32A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2388572250F9A250020C32A /* LaunchScreen.storyboard */; };
@@ -16,7 +25,6 @@
 		F2388585250F9A720020C32A /* HelveticaNeueLTGEO-65Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2388580250F9A720020C32A /* HelveticaNeueLTGEO-65Medium.otf */; };
 		F2388586250F9A720020C32A /* HelveticaNeueLTGEO-75Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2388581250F9A720020C32A /* HelveticaNeueLTGEO-75Bold.otf */; };
 		F2388587250F9A720020C32A /* HelveticaNeueLTGEO-55Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = F2388582250F9A720020C32A /* HelveticaNeueLTGEO-55Roman.otf */; };
-		F238858D250F9AAD0020C32A /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F238858B250F9AAD0020C32A /* AppManager.swift */; };
 		F238858E250F9AAD0020C32A /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F238858C250F9AAD0020C32A /* AppModule.swift */; };
 		F2388591250F9ABC0020C32A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2388590250F9ABC0020C32A /* Constants.swift */; };
 		F238859C250F9AD40020C32A /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F238859A250F9AD40020C32A /* UIExtensions.swift */; };
@@ -29,12 +37,24 @@
 		F23885C3250F9BE30020C32A /* MainModuleApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23885BC250F9BE30020C32A /* MainModuleApi.swift */; };
 		F23885C4250F9BE30020C32A /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23885BD250F9BE30020C32A /* MainInteractor.swift */; };
 		F23885C5250F9BE30020C32A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23885BE250F9BE30020C32A /* MainView.swift */; };
+		F2603967250FE54F005068A1 /* BasicResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2603966250FE54F005068A1 /* BasicResponseError.swift */; };
+		F2603969250FE8F3005068A1 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2603968250FE8F3005068A1 /* CurrentWeather.swift */; };
+		F2E8CBC5250FE2DC00FC59A9 /* BasicResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E8CBC4250FE2DC00FC59A9 /* BasicResponseHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		47BBA9A0617CEE2E93D3936D /* Pods-WeatheriOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatheriOS.debug.xcconfig"; path = "Target Support Files/Pods-WeatheriOS/Pods-WeatheriOS.debug.xcconfig"; sourceTree = "<group>"; };
 		83ACF51652A3D83ED3A42C99 /* Pods_WeatheriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatheriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC64612E15E2A3D7EBDDAF24 /* Pods-WeatheriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatheriOS.release.xcconfig"; path = "Target Support Files/Pods-WeatheriOS/Pods-WeatheriOS.release.xcconfig"; sourceTree = "<group>"; };
+		F207533C250F9E1B00EC3E6B /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		F207533F250F9E8B00EC3E6B /* Forecast.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Forecast.storyboard; sourceTree = "<group>"; };
+		F2075340250F9E8B00EC3E6B /* ForecastDisplayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastDisplayData.swift; sourceTree = "<group>"; };
+		F2075341250F9E8B00EC3E6B /* ForecastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastPresenter.swift; sourceTree = "<group>"; };
+		F2075342250F9E8B00EC3E6B /* ForecastRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRouter.swift; sourceTree = "<group>"; };
+		F2075343250F9E8B00EC3E6B /* ForecastModuleApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModuleApi.swift; sourceTree = "<group>"; };
+		F2075344250F9E8B00EC3E6B /* ForecastInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastInteractor.swift; sourceTree = "<group>"; };
+		F2075345250F9E8B00EC3E6B /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		F207534F250F9F7A00EC3E6B /* ProgressNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressNavigationController.swift; sourceTree = "<group>"; };
 		F2388564250F9A210020C32A /* WeatheriOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatheriOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2388567250F9A210020C32A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2388569250F9A210020C32A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +65,6 @@
 		F2388580250F9A720020C32A /* HelveticaNeueLTGEO-65Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-65Medium.otf"; sourceTree = "<group>"; };
 		F2388581250F9A720020C32A /* HelveticaNeueLTGEO-75Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-75Bold.otf"; sourceTree = "<group>"; };
 		F2388582250F9A720020C32A /* HelveticaNeueLTGEO-55Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTGEO-55Roman.otf"; sourceTree = "<group>"; };
-		F238858B250F9AAD0020C32A /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		F238858C250F9AAD0020C32A /* AppModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
 		F2388590250F9ABC0020C32A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F238859A250F9AD40020C32A /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
@@ -58,6 +77,9 @@
 		F23885BC250F9BE30020C32A /* MainModuleApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleApi.swift; sourceTree = "<group>"; };
 		F23885BD250F9BE30020C32A /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
 		F23885BE250F9BE30020C32A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F2603966250FE54F005068A1 /* BasicResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicResponseError.swift; sourceTree = "<group>"; };
+		F2603968250FE8F3005068A1 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		F2E8CBC4250FE2DC00FC59A9 /* BasicResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicResponseHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +109,28 @@
 				83ACF51652A3D83ED3A42C99 /* Pods_WeatheriOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F207533E250F9E7100EC3E6B /* Forecast */ = {
+			isa = PBXGroup;
+			children = (
+				F207533F250F9E8B00EC3E6B /* Forecast.storyboard */,
+				F2075340250F9E8B00EC3E6B /* ForecastDisplayData.swift */,
+				F2075341250F9E8B00EC3E6B /* ForecastPresenter.swift */,
+				F2075342250F9E8B00EC3E6B /* ForecastRouter.swift */,
+				F2075343250F9E8B00EC3E6B /* ForecastModuleApi.swift */,
+				F2075344250F9E8B00EC3E6B /* ForecastInteractor.swift */,
+				F2075345250F9E8B00EC3E6B /* ForecastView.swift */,
+			);
+			path = Forecast;
+			sourceTree = "<group>";
+		};
+		F207534D250F9F7A00EC3E6B /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				F207534F250F9F7A00EC3E6B /* ProgressNavigationController.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		F238855B250F9A210020C32A = {
@@ -158,6 +202,7 @@
 		F2388589250F9A910020C32A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F207534D250F9F7A00EC3E6B /* UIComponents */,
 				F238858A250F9A9B0020C32A /* App */,
 				F238858F250F9ABC0020C32A /* Constants */,
 				F2388592250F9AC80020C32A /* Entities */,
@@ -173,7 +218,6 @@
 				F2388569250F9A210020C32A /* SceneDelegate.swift */,
 				F2388572250F9A250020C32A /* LaunchScreen.storyboard */,
 				F238858C250F9AAD0020C32A /* AppModule.swift */,
-				F238858B250F9AAD0020C32A /* AppManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -197,6 +241,8 @@
 		F2388593250F9AC80020C32A /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				F2603966250FE54F005068A1 /* BasicResponseError.swift */,
+				F2603968250FE8F3005068A1 /* CurrentWeather.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -213,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				F238859E250F9ADC0020C32A /* BaseAPI.swift */,
+				F2E8CBC4250FE2DC00FC59A9 /* BasicResponseHandler.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -222,6 +269,7 @@
 			children = (
 				F23885A1250F9B0F0020C32A /* BaseControllers */,
 				F23885A4250F9B7A0020C32A /* MainModule */,
+				F207533E250F9E7100EC3E6B /* Forecast */,
 			);
 			path = AppModules;
 			sourceTree = "<group>";
@@ -229,6 +277,7 @@
 		F23885A1250F9B0F0020C32A /* BaseControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F207533C250F9E1B00EC3E6B /* HomeTabBarController.swift */,
 				F23885A2250F9B0F0020C32A /* HomeViewController.swift */,
 			);
 			path = BaseControllers;
@@ -309,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F23885BF250F9BE30020C32A /* Main.storyboard in Resources */,
+				F2075346250F9E8B00EC3E6B /* Forecast.storyboard in Resources */,
 				F2388587250F9A720020C32A /* HelveticaNeueLTGEO-55Roman.otf in Resources */,
 				F2388585250F9A720020C32A /* HelveticaNeueLTGEO-65Medium.otf in Resources */,
 				F2388574250F9A250020C32A /* LaunchScreen.storyboard in Resources */,
@@ -370,17 +420,27 @@
 				F23885C2250F9BE30020C32A /* MainRouter.swift in Sources */,
 				F23885C0250F9BE30020C32A /* MainDisplayData.swift in Sources */,
 				F238858E250F9AAD0020C32A /* AppModule.swift in Sources */,
+				F2075351250F9F7A00EC3E6B /* ProgressNavigationController.swift in Sources */,
+				F207534A250F9E8B00EC3E6B /* ForecastModuleApi.swift in Sources */,
 				F238859C250F9AD40020C32A /* UIExtensions.swift in Sources */,
+				F207534B250F9E8B00EC3E6B /* ForecastInteractor.swift in Sources */,
 				F2388568250F9A210020C32A /* AppDelegate.swift in Sources */,
 				F238856A250F9A210020C32A /* SceneDelegate.swift in Sources */,
+				F2603967250FE54F005068A1 /* BasicResponseError.swift in Sources */,
+				F2603969250FE8F3005068A1 /* CurrentWeather.swift in Sources */,
 				F23885C1250F9BE30020C32A /* MainPresenter.swift in Sources */,
+				F2075349250F9E8B00EC3E6B /* ForecastRouter.swift in Sources */,
 				F238859F250F9ADC0020C32A /* BaseAPI.swift in Sources */,
-				F238858D250F9AAD0020C32A /* AppManager.swift in Sources */,
+				F207534C250F9E8B00EC3E6B /* ForecastView.swift in Sources */,
 				F2388591250F9ABC0020C32A /* Constants.swift in Sources */,
 				F23885C5250F9BE30020C32A /* MainView.swift in Sources */,
+				F2075347250F9E8B00EC3E6B /* ForecastDisplayData.swift in Sources */,
+				F2E8CBC5250FE2DC00FC59A9 /* BasicResponseHandler.swift in Sources */,
 				F23885C3250F9BE30020C32A /* MainModuleApi.swift in Sources */,
 				F23885A3250F9B0F0020C32A /* HomeViewController.swift in Sources */,
 				F23885C4250F9BE30020C32A /* MainInteractor.swift in Sources */,
+				F2075348250F9E8B00EC3E6B /* ForecastPresenter.swift in Sources */,
+				F207533D250F9E1B00EC3E6B /* HomeTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

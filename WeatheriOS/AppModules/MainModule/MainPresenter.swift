@@ -11,10 +11,18 @@ import Viperit
 
 // MARK: - MainPresenter Class
 final class MainPresenter: Presenter {
+    
+    override func viewHasLoaded() {
+        view.startLoading()
+        interactor.getCurrentWeather()
+    }
 }
 
 // MARK: - MainPresenter API
 extension MainPresenter: MainPresenterApi {
+    func weatherDidLoaded(with weather: CurrentWeather) {
+        view.updateView(with: weather)
+    }
 }
 
 // MARK: - Main Viper Components

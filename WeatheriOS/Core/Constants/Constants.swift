@@ -9,12 +9,18 @@
 import Foundation
 
 struct Constants {
-    
+    struct Key {
+        static let apiKey = "92656ead9d9666063eec9f87094f6acb"
+    }
+
     struct Api {
-        static let baseUrl = "https://openweathermap.org"
+        static let baseUrl = "https://api.openweathermap.org"
         
         struct Routes {
             static let api = "/api"
+            static let number = "/2.5"
+            static let data = "/data"
+            static let weather = "/weather"
         }
     }
 }

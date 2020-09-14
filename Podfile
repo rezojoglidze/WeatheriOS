@@ -7,4 +7,6 @@ target 'WeatheriOS' do
 
   # Pods for WeatheriOS
     pod 'Viperit'
+    pod 'Alamofire'
+    pod 'Kingfisher', '~> 5.0'
 end
