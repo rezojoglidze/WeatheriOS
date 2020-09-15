@@ -32,9 +32,9 @@ final class ForecastView: HomeViewController {
         pageViewController.selectedTextColor = Constants.Colors.main
         pageViewController.selectedFont = UIFont.main(type: .medium, size: 15)
         pageViewController.font = UIFont.main(type: .medium, size: 15)
-        pageViewController.menuHorizontalAlignment = .left
+        pageViewController.menuHorizontalAlignment = .center
         pageViewController.dataSource = self
-        pageViewController.menuItemSize = .selfSizing(estimatedWidth: 30, height: 40)
+        pageViewController.menuItemSize = .selfSizing(estimatedWidth: pageViewController.view.frame.width / 5  , height: 40)
         self.addChild(pageViewController)
         self.view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)

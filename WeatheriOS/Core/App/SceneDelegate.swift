@@ -17,8 +17,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        window?.overrideUserInterfaceStyle = .dark
+        configureUserTheme()
         window?.rootViewController = HomeTabBarController()
+    }
+    
+    func configureUserTheme() {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "a"
+        let dateString = formatter.string(from: Date())
+        
+        if dateString == "AM" {
+            window?.overrideUserInterfaceStyle = .light
+        } else {
+            window?.overrideUserInterfaceStyle = .dark
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
