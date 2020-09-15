@@ -9,4 +9,5 @@ target 'WeatheriOS' do
     pod 'Viperit'
     pod 'Alamofire'
     pod 'Kingfisher', '~> 5.0'
+    pod 'Parchment'
 end

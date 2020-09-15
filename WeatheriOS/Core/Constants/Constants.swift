@@ -7,8 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constants {
+    
+    struct Colors {
+           static let main: UIColor = #colorLiteral(red: 0.5162952542, green: 0.4901071191, blue: 0.9351488948, alpha: 1)
+       }
+    
     struct Key {
         static let apiKey = "92656ead9d9666063eec9f87094f6acb"
     }

@@ -46,12 +46,13 @@ final class MainView: HomeViewController {
     func setupView() {
         [dateView,contentView].forEach {
             $0?.isHidden = false
-            $0?.layer.cornerRadius = $0 == dateView ? 18 : 25
         }
+        weatherIcon.layer.shadowColor = UIColor.lightGray.cgColor
         contentView.layer.shadowColor = UIColor.lightGray.cgColor
-        contentView.layer.shadowOpacity = 1
-        contentView.layer.shadowOffset = .zero
-        contentView.layer.shadowRadius = 5
+        weatherIcon.layer.shadowPath = UIBezierPath(rect: CGRect(x: 20,
+                                                                 y: weatherIcon.bounds.maxY + 10,
+                                                                 width: weatherIcon.bounds.width,
+                                                                 height: 5)).cgPath
     }
     
     func configureDateView(with labelsWithDateFormatType: [(String, UILabel?)]) {

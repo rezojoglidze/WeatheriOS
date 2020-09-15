@@ -10,6 +10,19 @@ import Foundation
 import UIKit
 import ImageIO
 
+extension UIFont {
+    
+    enum HelveticaNeueGeo: String {
+        case medium = "HelveticaNeueLTGEO-65Medium"
+        case roman = "HelveticaNeueLTGEO-55Roman"
+        case bold = "HelveticaNeueLTGEO-75Bold"
+    }
+    
+    static func main(type: HelveticaNeueGeo, size: CGFloat) -> UIFont {
+        return UIFont(name: type.rawValue, size: size)!
+    }
+}
+
 extension UIViewController {
     @objc
        func startLoading() {

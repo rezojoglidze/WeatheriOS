@@ -3,24 +3,28 @@ PODS:
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
+  - Parchment (2.3.0)
   - Viperit (1.4.4)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher (~> 5.0)
+  - Parchment
   - Viperit
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - Parchment
     - Viperit
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  Parchment: 72a7eb8072454a9500a53dd84776e04fba24e740
   Viperit: cd08e50b10a1f58c6dad0833bbc111e4de398b31
 
-PODFILE CHECKSUM: 9669423075b47e9f66db40e053e1706e99786552
+PODFILE CHECKSUM: a765533ea0f0849b4d71b36757b1de9046d99e98
 
 COCOAPODS: 1.9.1
