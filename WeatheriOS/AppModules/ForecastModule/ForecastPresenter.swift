@@ -20,8 +20,8 @@ final class ForecastPresenter: Presenter {
 
 // MARK: - ForecastPresenter API
 extension ForecastPresenter: ForecastPresenterApi {
-    func forecastDidLoad(forecast: Forecast) {
-        view.updateView(forecast: forecast)
+    func forecastDetailsDidLoad(forecastDetails: [ForecastDetails]) {
+        view.updateView(forecastDetails: forecastDetails)
     }
 }
 

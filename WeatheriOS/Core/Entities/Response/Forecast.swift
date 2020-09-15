@@ -11,9 +11,17 @@ import Foundation
 struct Forecast: Codable {
     let cod: String
     let message,cnt: Int
-    let list: [ListItem]
+    let list: [List]
     let city: City
+    
+    
+//    enum CodingKeys: String, CodingKey {
+//        case forecastDetails = "list"
+//        case cod,message,cnt,city
+//    }
 }
+
+
 
 struct City: Codable {
     let id: Int
@@ -25,7 +33,7 @@ struct City: Codable {
     let sunrise, sunset: Int
 }
 
-struct ListItem: Codable {
+struct List: Codable {
     let dt: Int
     let main: Main
     let weather: [Weather]

@@ -15,14 +15,14 @@ protocol ForecastRouterApi: RouterProtocol {
 //MARK: - ForecastView API
 protocol ForecastViewApi: UserInterfaceProtocol {
     func startLoading()
-    func updateView(forecast: Forecast)
+    func updateView(forecastDetails: [ForecastDetails])
 }
 
 //MARK: - ForecastPresenter API
 protocol ForecastPresenterApi: PresenterProtocol {
     
     //Interactor -> Presenter
-    func forecastDidLoad(forecast: Forecast)
+    func forecastDetailsDidLoad(forecastDetails: [ForecastDetails])
 }
 
 //MARK: - ForecastInteractor API
