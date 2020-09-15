@@ -44,6 +44,10 @@ extension Date {
         
         return currentFiveDay
     }
+    
+    func dayNumberOfWeek() -> Int? {
+        return Calendar.current.dateComponents([.weekday], from: self).weekday
+    }
 }
 
 extension UIFont {

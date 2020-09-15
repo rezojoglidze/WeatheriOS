@@ -25,22 +25,19 @@ class ForecastDetailItemCell: UITableViewCell {
         weatherIcon.kf.setImage(with: URL(string: "https://openweathermap.org/img/wn/\(iconId)@2x.png"))
     }
     
-    func configureDate(date: String) -> String{
-        print("miwodebulia -> \(date)")
+    func configureDate(date: String) -> String {
         let dateFormatter = DateFormatter()
-//        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let date = dateFormatter.date(from:date)!
-        print("date -> \(date)")
-        dateFormatter.dateFormat = "hh:mm"
-        print(dateFormatter.string(from: date))
+        dateFormatter.dateFormat = "HH:mm"
+        
         return dateFormatter.string(from: date)
     }
     
     func configure(forecastDetail: List){
         loadWeatherIcon(iconId: forecastDetail.weather[0].icon)
         infoLbl.text = forecastDetail.weather[0].main
-        dateLbl.text = forecastDetail.dt_txt
+        dateLbl.text = configureDate(date: forecastDetail.dt_txt)
         celsiusLbl.text = String(Int(forecastDetail.main.temp)) + "C"
     }
 }

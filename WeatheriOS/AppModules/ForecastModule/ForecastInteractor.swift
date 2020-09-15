@@ -17,45 +17,69 @@ struct ForecastDetails {
 // MARK: - ForecastInteractor Class
 final class ForecastInteractor: Interactor {
     
+    let formatter = DateFormatter()
+    let weekDays = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
     var ForecastDetailItems: [ForecastDetails] = []
+    var relevantWeekDays: [String] = []
+    
+    func getCurrentHour(date: String) -> Int {
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = formatter.date(from:date)!
+        formatter.dateFormat = "HH"
+        let currentHour = Int(formatter.string(from: date))!
+        
+        formatter.dateFormat = "EEE"
+        let day = formatter.string(from: Date())
+        if let index = weekDays.firstIndex(of: day) {
+            getRelevantWeekDay(index: index)
+        }
+        
+        return currentHour
+    }
+    
+    func getRelevantWeekDay(index: Int) {
+        
+        //tu index metia 2-ze, weekDays-dan ar shegvidzlia index-is shemdgomi 5 elementis ageba.
+        if index > 2 {
+            let firstPartCount = (weekDays.count - 1) - index
+            let secondPartCount = 5 - firstPartCount
+            
+            for weekDay in weekDays[index..<(index+firstPartCount)] {
+                relevantWeekDays.append(weekDay)
+            }
+            for weekDay in weekDays[0..<secondPartCount] {
+                relevantWeekDays.append(weekDay)
+            }
+        } else {
+            for weekDay in weekDays[index..<(index+5)] {
+                relevantWeekDays.append(weekDay)
+            }
+        }
+    }
+    
     
     func makeArrayForForecastDetail(forecast: Forecast) {
-     
+        let currentHour = getCurrentHour(date: forecast.list[0].dt_txt)
+        let forecastDetailItemsFirstItemCount = (24 - currentHour) / 3
         
         
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                let date = dateFormatter.date(from:forecast.list[0].dt_txt)!
+        let firstItemElements = Array(forecast.list.prefix(forecastDetailItemsFirstItemCount))
+        ForecastDetailItems.append(ForecastDetails(day: relevantWeekDays[0], forecastDetail: firstItemElements))
+        
+        let secondItemElements = Array(forecast.list[forecastDetailItemsFirstItemCount...forecastDetailItemsFirstItemCount + 7])
+        ForecastDetailItems.append(ForecastDetails(day: relevantWeekDays[1], forecastDetail: secondItemElements))
+        
+        let thirdItemElements = Array(forecast.list[forecastDetailItemsFirstItemCount + 8...forecastDetailItemsFirstItemCount + 15])
+        ForecastDetailItems.append(ForecastDetails(day: relevantWeekDays[2], forecastDetail: thirdItemElements))
+        
+        let fourthItemElements = Array(forecast.list[forecastDetailItemsFirstItemCount + 16...forecastDetailItemsFirstItemCount + 23])
+        ForecastDetailItems.append(ForecastDetails(day: relevantWeekDays[3], forecastDetail: fourthItemElements))
+        
+        let fifthItemElements = Array(forecast.list[forecastDetailItemsFirstItemCount + 24...forecastDetailItemsFirstItemCount + 31])
+        ForecastDetailItems.append(ForecastDetails(day: relevantWeekDays[4], forecastDetail: fifthItemElements))
         
         
-        dateFormatter.dateFormat = "HH"
-      
-        
-        let firstItemCountOfForecastDetailItems = ( 24 - Int(dateFormatter.string(from: date))!) / 3
-        
-        
-
-        let firstItemElements = Array(forecast.list.prefix(firstItemCountOfForecastDetailItems))
-        ForecastDetailItems.append(ForecastDetails(day: "ოთხშ", forecastDetail: firstItemElements))
-
-
-        let secondItemElements = Array( forecast.list[firstItemCountOfForecastDetailItems...firstItemCountOfForecastDetailItems+8]) // also works
-        ForecastDetailItems.append(ForecastDetails(day: "ხუთშ", forecastDetail: secondItemElements))
-
-       let thirdItemElements = Array( forecast.list[firstItemCountOfForecastDetailItems+8...firstItemCountOfForecastDetailItems+16]) // also works
-             ForecastDetailItems.append(ForecastDetails(day: "პარ", forecastDetail: thirdItemElements))
-
-
-        let fourthItemElements = Array( forecast.list[firstItemCountOfForecastDetailItems+16...firstItemCountOfForecastDetailItems+24]) // also works
-              ForecastDetailItems.append(ForecastDetails(day: "შაბ", forecastDetail: fourthItemElements))
-
-
-        let fifthItemElements = Array( forecast.list[firstItemCountOfForecastDetailItems+24...firstItemCountOfForecastDetailItems+32]) // also works
-              ForecastDetailItems.append(ForecastDetails(day: "კვირ", forecastDetail: fifthItemElements))
-
-
         presenter.forecastDetailsDidLoad(forecastDetails: ForecastDetailItems)
-        
     }
 }
 

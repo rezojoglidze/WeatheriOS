@@ -18,12 +18,10 @@ final class ForecastView: HomeViewController {
     //MARK: class Variables
     let pageViewController = PagingViewController()
     var forecastDetails: [ForecastDetails] = []
-    //MARK: IBOutlets
-    
+        
     //MARK: View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configurePageVC()
     }
     
@@ -56,19 +54,9 @@ extension ForecastView: ForecastViewApi {
     func updateView(forecastDetails: [ForecastDetails]) {
         self.stopLoading()
         self.forecastDetails = forecastDetails
-        
-        let vc = ForecastDetailController.getInstance(with: forecastDetails[0])
-        let vc1 = ForecastDetailController.getInstance(with: forecastDetails[1])
-        let vc2 = ForecastDetailController.getInstance(with: forecastDetails[2])
-        let vc3 = ForecastDetailController.getInstance(with: forecastDetails[3])
-        let vc4 = ForecastDetailController.getInstance(with: forecastDetails[4])
-
-        viewControllers.append(vc)
-        viewControllers.append(vc1)
-        viewControllers.append(vc2)
-        viewControllers.append(vc3)
-        viewControllers.append(vc4)
-
+        for index in 0...4 {
+            viewControllers.append(ForecastDetailController.getInstance(with: forecastDetails[index]))
+        }
         pageViewController.reloadData()
         pageViewController.select(index: 0, animated: true)
     }
