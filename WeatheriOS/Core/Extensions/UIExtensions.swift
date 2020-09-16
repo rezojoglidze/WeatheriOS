@@ -19,7 +19,7 @@ extension UIViewController {
     private func startLoadingAnimation() {
         if view.viewWithTag(1000) == nil {
             let animationBackgroundView = UIView()
-            animationBackgroundView.backgroundColor = UIColor.clear
+            animationBackgroundView.backgroundColor = view.backgroundColor
             animationBackgroundView.tag = 1000
             view.addSubview(animationBackgroundView)
             let animation = UIImageView(image: UIImage.gifImageWithName("Loader"))

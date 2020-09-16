@@ -23,13 +23,9 @@ final class ForecastInteractor: Interactor {
     var relevantWeekDays: [String] = []
     
     func getCurrentHour(date: String) -> Int {
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let date = formatter.date(from:date)!
-        formatter.dateFormat = "HH"
-        let currentHour = Int(formatter.string(from: date))!
+        let currentHour = Int(Date().configureDateByFormatType(date: date, formatType: "yyyy-MM-dd HH:mm:ss"))!
+        let day = Date().getCurrentDateByFormatType(with: "EEE")
         
-        formatter.dateFormat = "EEE"
-        let day = formatter.string(from: Date())
         if let index = weekDays.firstIndex(of: day) {
             getRelevantWeekDay(index: index)
         }

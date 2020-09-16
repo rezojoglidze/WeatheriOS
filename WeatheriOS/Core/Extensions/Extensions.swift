@@ -20,29 +20,24 @@ let weekdays = [
 ]
 
 extension Date {
-    func currentFiveDay() -> [String] {
-        
-        var currentFiveDay:[String] = []
-        
+    
+    func getCurrentDateByFormatType(with formatType: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE"
+        dateFormatter.timeZone = TimeZone(identifier: "GMT+4")
+        dateFormatter.dateFormat = formatType
         
+        return dateFormatter.string(from: Date())
+    }
+    
+    func configureDateByFormatType(date: String, formatType: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: "GMT+4")
+
+        dateFormatter.dateFormat = formatType
+        let date = dateFormatter.date(from:date)!
+        dateFormatter.dateFormat = "HH"
         
-        let calendar: NSCalendar = NSCalendar.current as NSCalendar
-        let components: NSDateComponents = calendar.components(.weekday, from: self) as NSDateComponents
-        
-        let index = weekdays.firstIndex(of: weekdays[components.weekday - 1])!
-        
-        if ((weekdays.count) - index) < 2 {
-            let counter = (weekdays.count - 1) - index
-            print(counter)
-        } else {
-            while index < (index + 3) {
-                currentFiveDay.append(weekdays[index])
-            }
-        }
-        
-        return currentFiveDay
+        return dateFormatter.string(from: date)
     }
     
     func dayNumberOfWeek() -> Int? {

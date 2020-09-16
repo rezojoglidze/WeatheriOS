@@ -43,6 +43,19 @@ final class MainView: HomeViewController {
         weatherIcon.kf.setImage(with: URL(string: "https://openweathermap.org/img/wn/\(iconId)@2x.png"))
     }
     
+    
+    func configureAnimation() {
+        UIView.animate(withDuration: 2) {
+            self.dateView.frame = CGRect(x: 0, y: 0, width: self.dateView.frame.width, height: self.dateView.frame.height)
+            self.dateView.center = self.view.center
+        }
+        
+        weatherIcon.transform = CGAffineTransform(translationX: 40, y: 10)
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+            self.weatherIcon.transform = CGAffineTransform.identity
+        }, completion: nil)
+    }
+    
     func setupView() {
         [dateView,contentView].forEach {
             $0?.isHidden = false
@@ -56,7 +69,8 @@ final class MainView: HomeViewController {
     }
     
     func configureDateView(with labelsWithDateFormatType: [(String, UILabel?)]) {
-        
+        formatter.timeZone = TimeZone(identifier: "GMT+4")
+
         labelsWithDateFormatType.forEach { (formatType, label) in
             formatter.dateFormat = formatType
             label!.text = formatter.string(from: Date())
@@ -69,11 +83,6 @@ final class MainView: HomeViewController {
         weatherDescriptionLbl.text = String(Int(currentWeather.main.temp)) + "C| " + currentWeather.weather[0].main
         cloudinessPercentageLbl.text = String(currentWeather.clouds.all) + "%"
         windSpeedLbl.text = String(currentWeather.wind.speed) + "KM/H"
-        
-        let labelsWithDateFormatType = [("hh:mm",dateTimeLbl),("a",amOrPmLbl),("dd MMM yyyy",dateLbl),("EEEE",dayLbl)]
-        configureDateView(with: labelsWithDateFormatType)
-        
-        setupView()
     }
 }
 
@@ -81,7 +90,12 @@ final class MainView: HomeViewController {
 extension MainView: MainViewApi {
     func updateView(with weather: CurrentWeather) {
         self.stopLoading()
-        self.configureContentView(with: weather)
+        configureContentView(with: weather)
+        
+        let labelsWithDateFormatType = [("hh:mm",dateTimeLbl),("a",amOrPmLbl),("dd MMM yyyy",dateLbl),("EEEE",dayLbl)]
+        configureDateView(with: labelsWithDateFormatType)
+        setupView()
+        configureAnimation()
     }
 }
 
