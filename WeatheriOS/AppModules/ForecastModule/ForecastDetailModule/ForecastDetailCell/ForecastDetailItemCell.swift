@@ -20,9 +20,24 @@ class ForecastDetailItemCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        if selected {
+            UIView.animate(withDuration: 0.15, delay: 0.0, options: .curveEaseInOut, animations: {
+                self.transform = CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95)
+                }) { (finished) in
+                    UIView.animate(withDuration: 0.15,delay: 0,options: .curveEaseInOut, animations: {
+                        self.transform = CGAffineTransform.identity
+                    })
+            }
+        }
+    }
+
     //MARK: View Setup
     func loadWeatherIcon(iconId: String) {
         weatherIcon.kf.setImage(with: URL(string: "https://openweathermap.org/img/wn/\(iconId)@2x.png"))
+        weatherIcon.shake(translationX: 20, y: 0)
     }
     
     func configureDate(date: String) -> String {

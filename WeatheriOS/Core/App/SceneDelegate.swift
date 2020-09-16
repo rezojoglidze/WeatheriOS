@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let dateString = Date().getCurrentDateByFormatType(with: "a")
 
         if dateString == "PM" {
-            window?.overrideUserInterfaceStyle = .dark
+            window?.overrideUserInterfaceStyle = .light
         } else {
             window?.overrideUserInterfaceStyle = .dark
         }

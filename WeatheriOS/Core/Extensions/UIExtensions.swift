@@ -10,6 +10,16 @@ import Foundation
 import UIKit
 import ImageIO
 
+
+extension UIImageView {
+    func shake(translationX: CGFloat = 40, y: CGFloat = 4) {
+        self.transform = CGAffineTransform(translationX: translationX, y: y)
+        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+            self.transform = CGAffineTransform.identity
+        }, completion: nil)
+    }
+}
+
 extension UIViewController {
     @objc
     func startLoading() {

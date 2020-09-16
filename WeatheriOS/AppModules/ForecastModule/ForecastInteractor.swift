@@ -23,7 +23,7 @@ final class ForecastInteractor: Interactor {
     var relevantWeekDays: [String] = []
     
     func getCurrentHour(date: String) -> Int {
-        let currentHour = Int(Date().configureDateByFormatType(date: date, formatType: "yyyy-MM-dd HH:mm:ss"))!
+        let currentHour = Int(Date().configureDateByFormatType(date: date, inputDateformatType: "yyyy-MM-dd HH:mm:ss", returnValueFormatType: "HH"))!
         let day = Date().getCurrentDateByFormatType(with: "EEE")
         
         if let index = weekDays.firstIndex(of: day) {

@@ -21,6 +21,7 @@ struct Constants {
 
     struct Api {
         static let baseUrl = "https://api.openweathermap.org"
+        static let imageDownloadBaseUrl = "https://openweathermap.org"
         
         struct Routes {
             static let api = "/api"
@@ -28,6 +29,8 @@ struct Constants {
             static let data = "/data"
             static let weather = "/weather"
             static let forecast = "/forecast"
+            static let img = "/img"
+            static let wn = "/wn"
         }
     }
 }

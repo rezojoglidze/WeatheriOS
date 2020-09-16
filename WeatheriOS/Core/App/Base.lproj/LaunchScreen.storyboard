@@ -20,17 +20,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6W-kF-lvs">
-                                <rect key="frame" x="157.5" y="433" width="99.5" height="30.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="25"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firtsPage" translatesAutoresizingMaskIntoConstraints="NO" id="cgn-FX-g09">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0z-jS-oih">
+                                <rect key="frame" x="121" y="431" width="172.5" height="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="28"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This product uses the https://openweathermap.org/api " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1h-DQ-4PK">
+                                <rect key="frame" x="40" y="823.5" width="334" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="I6W-kF-lvs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="54l-lK-Sg6"/>
-                            <constraint firstItem="I6W-kF-lvs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rqp-zz-4dK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h1h-DQ-4PK" secondAttribute="trailing" constant="40" id="11y-Hx-BZl"/>
+                            <constraint firstItem="x0z-jS-oih" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3fx-wg-DUR"/>
+                            <constraint firstAttribute="bottom" secondItem="cgn-FX-g09" secondAttribute="bottom" id="8HT-Ze-Opj"/>
+                            <constraint firstItem="x0z-jS-oih" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9T2-v6-3yX"/>
+                            <constraint firstItem="cgn-FX-g09" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="9xy-3r-Nx5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cgn-FX-g09" secondAttribute="trailing" id="Ki7-vB-Sdj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h1h-DQ-4PK" secondAttribute="bottom" constant="5" id="Vhy-eb-qtQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h1h-DQ-4PK" secondAttribute="bottom" constant="5" id="cr3-gQ-nfb"/>
+                            <constraint firstItem="h1h-DQ-4PK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="mNh-qk-hpH"/>
+                            <constraint firstItem="cgn-FX-g09" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ysh-n5-gXg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,4 +57,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="firtsPage" width="184" height="274"/>
+    </resources>
 </document>

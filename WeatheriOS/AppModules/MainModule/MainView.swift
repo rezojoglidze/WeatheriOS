@@ -14,9 +14,6 @@ import Kingfisher
 //MARK: MainView Class
 final class MainView: HomeViewController {
         
-    //MARK: Class Variable
-    let formatter = DateFormatter()
-    
     //MARK: IBOutlets
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var dateView: UIView!
@@ -37,23 +34,17 @@ final class MainView: HomeViewController {
         super.viewDidLoad()
     }
     
-    
     //MARK: View Setup
     func loadWeatherIcon(iconId: String) {
-        weatherIcon.kf.setImage(with: URL(string: "https://openweathermap.org/img/wn/\(iconId)@2x.png"))
+        weatherIcon.kf.setImage(with: URL(string: Constants.Api.imageDownloadBaseUrl + Constants.Api.Routes.img + Constants.Api.Routes.wn + "/\(iconId)" + "@2x.png"))
     }
-    
     
     func configureAnimation() {
         UIView.animate(withDuration: 2) {
             self.dateView.frame = CGRect(x: 0, y: 0, width: self.dateView.frame.width, height: self.dateView.frame.height)
             self.dateView.center = self.view.center
         }
-        
-        weatherIcon.transform = CGAffineTransform(translationX: 40, y: 10)
-        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
-            self.weatherIcon.transform = CGAffineTransform.identity
-        }, completion: nil)
+        weatherIcon.shake()
     }
     
     func setupView() {
@@ -69,8 +60,9 @@ final class MainView: HomeViewController {
     }
     
     func configureDateView(with labelsWithDateFormatType: [(String, UILabel?)]) {
+        let formatter = DateFormatter()
         formatter.timeZone = TimeZone(identifier: "GMT+4")
-
+        
         labelsWithDateFormatType.forEach { (formatType, label) in
             formatter.dateFormat = formatType
             label!.text = formatter.string(from: Date())

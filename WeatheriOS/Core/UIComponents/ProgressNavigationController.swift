@@ -27,6 +27,8 @@ final class ProgressNavigationController: UINavigationController {
     
     private func setupProgressView() {
         view.addSubview(progressView)
+        progressView.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor.black
         progressView.translatesAutoresizingMaskIntoConstraints = false
         progressView.progressTintColor = #colorLiteral(red: 0.5162952542, green: 0.4901071191, blue: 0.9351488948, alpha: 1)
         NSLayoutConstraint.activate([

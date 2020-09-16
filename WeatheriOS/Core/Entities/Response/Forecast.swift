@@ -13,12 +13,6 @@ struct Forecast: Codable {
     let message,cnt: Int
     let list: [List]
     let city: City
-    
-    
-//    enum CodingKeys: String, CodingKey {
-//        case forecastDetails = "list"
-//        case cod,message,cnt,city
-//    }
 }
 
 

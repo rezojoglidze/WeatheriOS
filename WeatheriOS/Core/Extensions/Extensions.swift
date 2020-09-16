@@ -25,17 +25,17 @@ extension Date {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(identifier: "GMT+4")
         dateFormatter.dateFormat = formatType
-        
+
         return dateFormatter.string(from: Date())
     }
     
-    func configureDateByFormatType(date: String, formatType: String) -> String {
+    func configureDateByFormatType(date: String, inputDateformatType: String, returnValueFormatType: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(identifier: "GMT+4")
 
-        dateFormatter.dateFormat = formatType
+        dateFormatter.dateFormat = inputDateformatType
         let date = dateFormatter.date(from:date)!
-        dateFormatter.dateFormat = "HH"
+        dateFormatter.dateFormat = returnValueFormatType
         
         return dateFormatter.string(from: date)
     }

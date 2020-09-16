@@ -3,71 +3,71 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HelveticaNeueLTGEO-75Bold.otf">
-            <string>HelveticaNeueLTGEO-75Bold</string>
+        <array key="HelveticaNeueLTGEO-65Medium.otf">
+            <string>HelveticaNeueLTGEO-65Medium</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="KGk-i7-Jjw" customClass="ForecastDetailItemCell" customModule="WeatheriOS" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="429" height="84"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="429" height="84"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="81" id="BaL-g7-vlk" customClass="ForecastDetailItemCell" customModule="WeatheriOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BaL-g7-vlk" id="8Nn-XR-W2i">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MtR-kY-0m1">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5jD-G2-ShL">
                         <rect key="frame" x="20" y="13" width="64" height="58.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="64" id="HAC-sL-cmG"/>
-                            <constraint firstAttribute="width" constant="64" id="ect-Dd-ykr"/>
+                            <constraint firstAttribute="height" constant="64" id="ojW-dK-KEJ"/>
+                            <constraint firstAttribute="width" constant="64" id="r1B-p0-iSo"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqS-hc-Beu">
-                        <rect key="frame" x="92" y="18" width="32.5" height="17.5"/>
-                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tau-va-20r">
-                        <rect key="frame" x="372.5" y="31.5" width="36.5" height="21"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-75Bold" family="Helvetica Neue LT GEO" pointSize="17"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3im-LM-aYb">
+                        <rect key="frame" x="92" y="20" width="42" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RU6-Sp-a7U">
+                                <rect key="frame" x="0.0" y="0.0" width="42" height="19.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-65Medium" family="Helvetica Neue LT GEO" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8O-vo-o5L">
+                                <rect key="frame" x="0.0" y="24.5" width="42" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ1-lW-XAK">
+                        <rect key="frame" x="358" y="31.5" width="36" height="21"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeueLTGEO-65Medium" family="Helvetica Neue LT GEO" pointSize="17"/>
                         <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjW-Vp-VZS">
-                        <rect key="frame" x="92" y="43.5" width="33.5" height="17.5"/>
-                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
-                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="MtR-kY-0m1" secondAttribute="bottom" constant="10" id="3Ga-u6-ysC"/>
-                    <constraint firstItem="MtR-kY-0m1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6Dp-1U-Alt"/>
-                    <constraint firstItem="LjW-Vp-VZS" firstAttribute="top" secondItem="hqS-hc-Beu" secondAttribute="bottom" constant="8" id="9d6-XO-V2I"/>
-                    <constraint firstItem="hqS-hc-Beu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="JCv-B6-ht6"/>
-                    <constraint firstItem="hqS-hc-Beu" firstAttribute="leading" secondItem="MtR-kY-0m1" secondAttribute="trailing" constant="8" id="ZI4-X9-T5H"/>
-                    <constraint firstItem="LjW-Vp-VZS" firstAttribute="leading" secondItem="MtR-kY-0m1" secondAttribute="trailing" constant="8" id="aMe-Ik-q1a"/>
-                    <constraint firstItem="MtR-kY-0m1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="egk-Ka-yrj"/>
-                    <constraint firstItem="Tau-va-20r" firstAttribute="centerY" secondItem="MtR-kY-0m1" secondAttribute="centerY" id="jF6-PS-cgZ"/>
-                    <constraint firstAttribute="trailing" secondItem="Tau-va-20r" secondAttribute="trailing" constant="20" id="oqo-jV-5Pp"/>
-                    <constraint firstItem="MtR-kY-0m1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="uqt-z5-8vq"/>
+                    <constraint firstAttribute="trailing" secondItem="xJ1-lW-XAK" secondAttribute="trailing" constant="20" id="5JE-4G-UpJ"/>
+                    <constraint firstItem="5jD-G2-ShL" firstAttribute="top" secondItem="8Nn-XR-W2i" secondAttribute="top" constant="10" id="GnP-PF-K1J"/>
+                    <constraint firstItem="xJ1-lW-XAK" firstAttribute="centerY" secondItem="3im-LM-aYb" secondAttribute="centerY" id="IxV-am-6Fa"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5jD-G2-ShL" secondAttribute="bottom" constant="10" id="QV7-af-fbO"/>
+                    <constraint firstItem="5jD-G2-ShL" firstAttribute="leading" secondItem="8Nn-XR-W2i" secondAttribute="leading" constant="20" id="ZH5-L6-ryq"/>
+                    <constraint firstItem="3im-LM-aYb" firstAttribute="centerY" secondItem="5jD-G2-ShL" secondAttribute="centerY" id="bfV-ny-tnS"/>
+                    <constraint firstItem="3im-LM-aYb" firstAttribute="leading" secondItem="5jD-G2-ShL" secondAttribute="trailing" constant="8" id="sBT-zz-0wm"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="celsiusLbl" destination="Tau-va-20r" id="PNi-B4-Glk"/>
-                <outlet property="dateLbl" destination="hqS-hc-Beu" id="cRf-oo-JNF"/>
-                <outlet property="infoLbl" destination="LjW-Vp-VZS" id="dXv-kF-0It"/>
-                <outlet property="weatherIcon" destination="MtR-kY-0m1" id="nKB-uD-ept"/>
+                <outlet property="celsiusLbl" destination="xJ1-lW-XAK" id="fv6-pI-ME3"/>
+                <outlet property="dateLbl" destination="RU6-Sp-a7U" id="h80-n2-OlG"/>
+                <outlet property="infoLbl" destination="Z8O-vo-o5L" id="1Yz-uD-oqP"/>
+                <outlet property="weatherIcon" destination="5jD-G2-ShL" id="8w8-ne-mVe"/>
             </connections>
-            <point key="canvasLocation" x="89.130434782608702" y="137.27678571428569"/>
+            <point key="canvasLocation" x="218.84057971014494" y="113.50446428571428"/>
         </tableViewCell>
     </objects>
     <resources>

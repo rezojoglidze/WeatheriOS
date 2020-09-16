@@ -10,32 +10,48 @@
         <!--Forecast Detail Controller-->
         <scene sceneID="YAj-Q5-W6L">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcl-b9-fQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="pqk-mj-JG0" customClass="ForecastDetailController" customModule="WeatheriOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Czc-Wj-ejv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-dy-849">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCp-O8-Zfz">
+                                <rect key="frame" x="20" y="44" width="374" height="200"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BZo-pi-DkZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
+                                <constraints>
+                                    <constraint firstItem="BZo-pi-DkZ" firstAttribute="top" secondItem="qCp-O8-Zfz" secondAttribute="top" id="OC5-5b-9gf"/>
+                                    <constraint firstAttribute="bottom" secondItem="BZo-pi-DkZ" secondAttribute="bottom" id="XgW-UF-uL4"/>
+                                    <constraint firstItem="BZo-pi-DkZ" firstAttribute="leading" secondItem="qCp-O8-Zfz" secondAttribute="leading" id="bIq-hU-DEE"/>
+                                    <constraint firstAttribute="trailing" secondItem="BZo-pi-DkZ" secondAttribute="trailing" id="gzx-Ax-t7b"/>
+                                    <constraint firstAttribute="height" priority="999" constant="200" id="k5a-OI-9K0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gSA-dy-849" firstAttribute="leading" secondItem="bHd-d7-Fw5" secondAttribute="leading" id="6CH-RG-Gx4"/>
-                            <constraint firstItem="bHd-d7-Fw5" firstAttribute="bottom" secondItem="gSA-dy-849" secondAttribute="bottom" id="Vzw-xj-rHa"/>
-                            <constraint firstItem="gSA-dy-849" firstAttribute="top" secondItem="bHd-d7-Fw5" secondAttribute="top" id="ikD-m8-YJA"/>
-                            <constraint firstItem="bHd-d7-Fw5" firstAttribute="trailing" secondItem="gSA-dy-849" secondAttribute="trailing" id="y0j-OY-Qph"/>
+                            <constraint firstItem="qCp-O8-Zfz" firstAttribute="leading" secondItem="bHd-d7-Fw5" secondAttribute="leading" constant="20" id="Gfa-ll-RuF"/>
+                            <constraint firstItem="bHd-d7-Fw5" firstAttribute="trailing" secondItem="qCp-O8-Zfz" secondAttribute="trailing" constant="20" id="ZX5-rI-Fwf"/>
+                            <constraint firstItem="qCp-O8-Zfz" firstAttribute="top" secondItem="bHd-d7-Fw5" secondAttribute="top" id="mCx-6G-gHh"/>
+                            <constraint firstItem="bHd-d7-Fw5" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qCp-O8-Zfz" secondAttribute="bottom" constant="20" id="rT9-yd-8PW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bHd-d7-Fw5"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="gSA-dy-849" id="74x-kd-tBz"/>
+                        <outlet property="containerHeightConstraint" destination="k5a-OI-9K0" id="EJd-sM-rn5"/>
+                        <outlet property="containerView" destination="qCp-O8-Zfz" id="yWe-mR-9aV"/>
+                        <outlet property="tableView" destination="BZo-pi-DkZ" id="ZQ7-4Y-jva"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kcl-b9-fQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="240.57971014492756" y="130.58035714285714"/>
+            <point key="canvasLocation" x="7" y="5"/>
         </scene>
     </scenes>
 </document>
